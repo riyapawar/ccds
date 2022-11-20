@@ -13,5 +13,4 @@ for i in ${!remoteUser[@]}; do
  	cloneCmd="git clone github.com://$remoteUser[$i]/$remoteDir[$i]"
 	cloneCmd=$cloneCmd"$remoteUser[$i] $localRepoDir"
 	cloneCmdRun=$($cloneCmd 2>&1)
-fi
 done
