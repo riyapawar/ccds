@@ -3,7 +3,8 @@
 set -e
 
 remoteUser=("ltkhang" "nttdots" "samvid25" "AlphaDelta")
-remoteDir=("dn-ids-ddos-defense" "nttdots" "samvid25" "AlphaDelta")
+remoteDir=("sdn-ids-ddos-defense" "go-dots" "ARP-Spoofing-Detection-and-Prevention" "Secure-Desktop")
+remoteRepos=$(ssh -l $remoteUser $remoteHost "ls $remoteDir")
 localCodeDir="${HOME}/CODE/"
 
 # for each repo found remotely, check if it exists locally
@@ -14,7 +15,7 @@ for i in ${!remoteUser[@]}; do
 	if [ -d $localRepoDir ]; then 	
 		echo -e "Directory $localRepoDir already exits, skipping ...\n"
 	else
-		cloneCmd="git clone https://github.com/$remoteUser[$i]/$remoteDir[$i].git"
+		cloneCmd="git clone github.com://$remoteUser[$i]/$remoteDir[$i]"
 		cloneCmd=$cloneCmd"$remoteUser[$i] $localRepoDir"
 		cloneCmdRun=$($cloneCmd 2>&1)
 		echo -e "Running: \n$ $cloneCmd"
