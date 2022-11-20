@@ -13,10 +13,10 @@ localCodeDir="${HOME}/CODE/"
 # if dir exists, skip, if not, clone the remote git repo into it
 for i in ${!remoteUser[@]}; do
   localRepoDir=$(echo ${localCodeDir}${remoteuser[$i]}|cut -d'.' -f1)
-  if [ -d $localRepoDir ]; then 	
+	if [ -d $localRepoDir ]; then 	
 		echo -e "Directory $localRepoDir already exits, skipping ...\n"
 	else
-=		cloneCmd="git clone ssh://$remoteUser[$i]@$remoteHost/$remoteDir[$i]"
+		cloneCmd="git clone ssh://$remoteUser[$i]@$remoteHost/$remoteDir[$i]"
 		cloneCmd=$cloneCmd"$remoteUser[$i] $localRepoDir"
 		cloneCmdRun=$($cloneCmd 2>&1)
 		echo -e "Running: \n$ $cloneCmd"
