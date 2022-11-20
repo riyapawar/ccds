@@ -19,4 +19,5 @@ for i in ${!remoteUser[@]}; do
 		cloneCmdRun=$($cloneCmd 2>&1)
 		echo -e "Running: \n$ $cloneCmd"
 		echo -e "${cloneCmdRun}\n\n"
+fi
 done
