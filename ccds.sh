@@ -4,7 +4,6 @@ set -e
 
 remoteUser=("ltkhang" "nttdots" "samvid25" "AlphaDelta")
 remoteDir=("sdn-ids-ddos-defense" "go-dots" "ARP-Spoofing-Detection-and-Prevention" "Secure-Desktop")
-remoteRepos=$(ssh -l $remoteUser $remoteHost "ls $remoteDir")
 localCodeDir="${HOME}/CODE/"
 
 # for each repo found remotely, check if it exists locally
