@@ -14,7 +14,7 @@ for i in ${!remoteUser[@]}; do
 	if [ -d $localRepoDir ]; then 	
 		echo -e "Directory $localRepoDir already exits, skipping ...\n"
 	else
-		cloneCmd="git clone github.com://$remoteUser[$i]/$remoteDir[$i].git"
+		cloneCmd="git clone https://github.com/$remoteUser[$i]/$remoteDir[$i].git"
 		cloneCmd=$cloneCmd"$remoteUser[$i] $localRepoDir"
 		cloneCmdRun=$($cloneCmd 2>&1)
 		echo -e "Running: \n$ $cloneCmd"
