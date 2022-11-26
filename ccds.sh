@@ -1,16 +1,16 @@
 #!/bin/bash
 
 set -e
+array = ("https://github.com/ltkhang/sdn-ids-ddos-defense.git", "https://github.com/nttdots/go-dots.git", 
+	 "https://github.com/samvid25/ARP-Spoofing-Detection-and-Prevention.git", "https://github.com/AlphaDelta/Secure-Desktop.git")
 
-remoteUser=("ltkhang" "nttdots" "samvid25" "AlphaDelta")
-remoteDir=("sdn-ids-ddos-defense" "go-dots" "ARP-Spoofing-Detection-and-Prevention" "Secure-Desktop")
-localCodeDir="${HOME}/CODE/"
+mkdir -p ~/git && cd ~/git
 
+for element in ${array[@]}
+do
+  echo "cloning $element"
+  git clone $element
+done
 # for each repo found remotely, check if it exists locally
 # assumption: name repo = repo.git, to be saved to repo (w/o .git)
 # if dir exists, skip, if not, clone the remote git repo into it
- 	cloneCmd="git clone github.com://ltkhang/sdn-ids-ddos-defense"
-	cloneCmd=$cloneCmd"ltkhang $localRepoDir"
-	cloneCmdRun=$($cloneCmd 2>&1)
-	printf -e "Running: \n$ $cloneCmd"
-	printf -e "${cloneCmdRun}\n\n"
