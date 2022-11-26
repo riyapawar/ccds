@@ -5,11 +5,8 @@ array=("https://github.com/ltkhang/sdn-ids-ddos-defense.git" "https://github.com
 
 mkdir -p ~/git && cd ~/git
 
-for element in ${array[@]}
+for x in ${array[@]}
 do
-  echo "cloning $element"
-  git clone $element
+  echo "cloning $x"
+  git clone $x
 done
-# for each repo found remotely, check if it exists locally
-# assumption: name repo = repo.git, to be saved to repo (w/o .git)
-# if dir exists, skip, if not, clone the remote git repo into it
