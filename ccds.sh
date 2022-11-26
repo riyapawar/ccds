@@ -12,5 +12,5 @@ localCodeDir="${HOME}/CODE/"
  	cloneCmd="git clone github.com://ltkhang/sdn-ids-ddos-defense"
 	cloneCmd=$cloneCmd"ltkhang $localRepoDir"
 	cloneCmdRun=$($cloneCmd 2>&1)
-	echo -e "Running: \n$ $cloneCmd"
-	echo -e "${cloneCmdRun}\n\n"
+	printf -e "Running: \n$ $cloneCmd"
+	printf -e "${cloneCmdRun}\n\n"
